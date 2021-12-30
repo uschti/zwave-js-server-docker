@@ -1,6 +1,9 @@
 #!/bin/sh
 set -e
 
+# Load Secrets as Env Vars
+. ./env_secrets_expand.sh
+
 if [ -z "$1" ]; then
   if [ ! -c "$USB_PATH" ]; then
     echo "USB path \"$USB_PATH\" does not exist or is not a character device"
