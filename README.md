@@ -25,14 +25,14 @@ S0_LEGACY_KEY=17DFB0C1BED4CABFF54E4B5375E257B3
 $ docker volume create zjs-storage
 
 # starts the server and uses the volume as the persistent cache directory
-$ docker run -d -p 3000:3000 --name=zjs -v zjs-storage:/cache --env-file=.env --device "/dev/serial/by-id/usb-0658_0200-if00:/dev/zwave" kpine/zwave-js-server:latest
+$ docker run -d -p 3000:3000 --name=zjs -v zjs-storage:/cache --env-file=.env --device "/dev/serial/by-id/usb-0658_0200-if00:/dev/zwave" uschti/zwave-js-server:latest
 ```
 
 ### Run with a bind mount
 
 ```shell
 # starts the server and uses a local folder as the persisent cache directory
-$ docker run -d -p 3000:3000 --name=zjs -v "$PWD/cache:/cache" --env-file=.env --device "/dev/serial/by-id/usb-0658_0200-if00:/dev/zwave" kpine/zwave-js-server:latest
+$ docker run -d -p 3000:3000 --name=zjs -v "$PWD/cache:/cache" --env-file=.env --device "/dev/serial/by-id/usb-0658_0200-if00:/dev/zwave" uschti/zwave-js-server:latest
 ```
 
 ### Docker Compose
@@ -45,7 +45,7 @@ Example of a minimal `docker-compose.yaml` file:
 services:
   zjs:
     container_name: zjs
-    image: kpine/zwave-js-server:latest
+    image: uschti/zwave-js-server:latest
     restart: unless-stopped
     environment:
       S2_ACCESS_CONTROL_KEY: "7764841BC794A54442E324682A550CEF"
