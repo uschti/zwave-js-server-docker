@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=8.9.2
+version=1.24.1-10.3.0
 tagName=uschti/zwave-js-server
 push=$1
 
