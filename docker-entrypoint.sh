@@ -2,7 +2,7 @@
 set -e
 
 # Load Secrets as Env Vars
-. ./env_secrets_expand.sh
+. /usr/local/bin/env_secrets_expand.sh
 
 if [ -z "$1" ]; then
   if [ ! -c "$USB_PATH" ]; then
